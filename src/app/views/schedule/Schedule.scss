@@ -3,22 +3,20 @@
 .Schedule {
   text-align: center;
   min-height: 100vh;
+  min-width: 100vw;
+  background-color: $coloredLightBackground;
 
   h1 {
     font-weight: 600;
   }
 
   .stripes {
-    display: grid;
-    grid-template-rows: repeat(5, 14vh);
-    grid-template-columns: repeat(5, 20vw);
     width: 100vw;
-    height: 70vh;
-    transform: skewY(-12deg);
+    height: 80vh;
     transform-origin: 0;
-    background: linear-gradient(150deg,$leftGradient 15%, $rightGradient 70%);
+    background-image: url('./../../../assets/images/clouds-background.jpg');
+    background-size: cover;
     position: absolute;
-
   
     .div {
       position: absolute;
@@ -130,16 +128,14 @@
   }
 
   #schedule-block {
-    height: 100vh;
-    width: 100vw;
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 
     .schedule-countdown {
-      height: 30vh;
+      margin-top: 70px;
+      height: 25vh;
       width: 100vw;
       display: flex;
       justify-content: center;
@@ -147,7 +143,12 @@
       color: white;
       text-align: left;
       flex-direction: column;
-      
+
+      .hat-left {
+        width: 40px;
+        height: 40px;
+      }
+        
       .schedule-countdown-border {
         width: 160px;
         height: 4px;
@@ -155,29 +156,39 @@
         background-color: white;
       }
 
-      div {
-        width: 70vh;
+      & > div {
+        width: 50vw;
         display: grid;
-        grid-template-columns: 40% 30% 30%;
-      }
-    }
+        grid-template-columns: 20% 20% 20% 20% 20%;
+        text-align: center;
 
-    .schedule-card {
-      border-radius: 20px;
-      z-index: 50;
-      height: 100%;
-      width: 80vw;
-      background-color: #2e2e2e;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-      color: $leftGradient;
+        @media screen and (max-width: 800px) {
+          width: 80vw;
+
+          h3 {
+            font-size: 25px;
+          }
+        }
+        
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
   }
 
   #credits {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    background-color: white;
+    height: 15vh;
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    p {
+      margin: 0;
+    }
   }
 }

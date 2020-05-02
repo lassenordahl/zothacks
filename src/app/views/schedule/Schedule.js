@@ -1,24 +1,20 @@
 import React from "react";
 import './Schedule.scss';
 
-import Fade from 'react-reveal/Fade';
+
+import { FloatingHat, ScheduleCard } from 'app/components';
 
 function Schedule() {
   return (
     <div className="Schedule">
-      <div className="stripes">
-        <Fade cascade duration={1000}>
-          <div className='inner0'></div>
-          <div className='inner1'></div>
-          <div className='inner2'></div>
-          <div className='inner3'></div>
-        </Fade>
-      </div>
       <section id="schedule-block">
         <div className="schedule-countdown">
           <div>
+            <div>
+              <FloatingHat offset={0}></FloatingHat>
+            </div>
             <h3>
-              00 HOURS
+              00 HRS
             </h3>
             <h3>
               00 MIN
@@ -26,12 +22,13 @@ function Schedule() {
             <h3>
               00 SEC
             </h3>
+            <div>
+              <FloatingHat offset={2}></FloatingHat>
+            </div>
           </div>
           <div className="schedule-countdown-border"></div>
         </div>
-        <div className="schedule-card">
-         
-        </div>
+        <ScheduleCard/>
       </section>
       <section id="credits">
         <p>Made with <a href="https://en.wikipedia.org/wiki/Anteater">&hearts;</a> in Irvine, CA</p>
